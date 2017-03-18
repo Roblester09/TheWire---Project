@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link rel="stylesheet" type="text/css" href="assets/css/landing.css">
+  <script src="sinch.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Chat Testing</title>
+
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+ <div class="top1">
+    <h1>Instant Message</h1>
+  </div>
+  
+      <form>
+<input id="username" placeholder="username">
+<input id="password" type="password" placeholder="password">
+<button class="btn waves-effect waves-light" type="submit" id="loginUser" name="action">Login
+    <i class="material-icons right">send</i> </button>
+<button class="btn waves-effect waves-light" type="submit" id="createUser" name="action">Sign Up
+    <i class="material-icons right">send</i> </button>
+</form> 
+<br> <br>
+ <div id="userInfo">
+          <h3><span id="username"></span></h3>
+         <button class="btn waves-effect waves-light" type="submit" id="logOut" name="action">Logout
+    <i class="material-icons right">send</i> </button>
+        </div>
+
+    <div class="frame mainArea">
+      <h3>Chat</h3>
+
+      <div class="error">
+      </div>
+        
+      <div id="chat">
+        <form id="newRecipient">
+          <input id="recipients" placeholder="Recipients (separate with space)"><br>
+        </form>
+        <form id="newMessage">
+          <input id="message" placeholder="Message (enter to send)"><br>
+         <!--  <button id="sendMsg">Send</button> -->
+        </form>
+
+        <div id="chatAreaContainer">
+          <div id="bottomFade"></div>
+          <div id="chatArea">
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      
+    </div>
+    
+    <div class="clearfix"></div>
+  </div>
+
+
+  <!--  Scripts-->
+  <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="assets/javascript/materialize.js"></script>
+  <script src="assets/javascript/init.js"></script>
+  <script src="assets/javascript/main.js"></script>
+
+  </body>
+</html>
