@@ -47,6 +47,10 @@ sinchClient = new SinchClient({
 	}
 });
 
+sinchClient.start({username: 'alice', password: 'somethingSecure'})
+    then(function() {
+        localStorage['sinchSession-' + sinchClient.applicationKey] = JSON.stringify(sinchClient.getSession());
+    })
 
 /*** Name of session, can be anything. ***/
 
