@@ -1,5 +1,5 @@
 .jumbotron {
-  margin: 0;
+  margin: auto 0;
 }
 
 #box-wrapper {
@@ -7,7 +7,6 @@
   min-height: 100vh;
   background-size: cover;
   background-position: center;
-  background-image: url('../images/background.jpg');
 }
 
 #box-wrapper h1 {
