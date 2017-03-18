@@ -10,6 +10,8 @@ $(document).ready(function() {
   };
   firebase.initializeApp(config);
 
+  var database = firebase.database();
+
 
 var global_username = '';
 
@@ -47,10 +49,7 @@ sinchClient = new SinchClient({
 	}
 });
 
-sinchClient.start({username: 'alice', password: 'somethingSecure'})
-    then(function() {
-        localStorage['sinchSession-' + sinchClient.applicationKey] = JSON.stringify(sinchClient.getSession());
-    })
+
 
 /*** Name of session, can be anything. ***/
 
@@ -60,7 +59,8 @@ var sessionName = 'sinchSession-' + sinchClient.applicationKey;
 /*** Check for valid session. NOTE: Deactivated by default to allow multiple browser-tabs with different users. Remove "false &&" to activate session loading! ***/
 
 var sessionObj = JSON.parse(localStorage[sessionName] || '{}');
-if(false && sessionObj.userId) { //Remove "false &&"" to actually check start from a previous session!
+
+if(sessionObj.userId) { //Remove "false &&"" to actually check start from a previous session!
 	sinchClient.start(sessionObj)
 		.then(function() {
 			global_username = sessionObj.userId;
@@ -68,6 +68,11 @@ if(false && sessionObj.userId) { //Remove "false &&"" to actually check start fr
 			showUI();
 			//Store session & manage in some way (optional)
 			localStorage[sessionName] = JSON.stringify(sinchClient.getSession());
+
+	event.preventDefault();
+	$('button#loginUser').attr('disabled', true);
+	$('button#createUser').attr('disabled', true);
+	clearError();
 		})
 		.fail(function() {
 			//No valid session, take suitable action, such as prompting for username/password, then start sinchClient again with login object
@@ -90,6 +95,13 @@ $('button#createUser').on('click', function(event) {
 	var signUpObj = {};
 	signUpObj.username = $('input#username').val();
 	signUpObj.password = $('input#password').val();
+
+	
+	database.ref().push({
+
+        username: signUpObj.username,
+        password: signUpObj.password,
+      });
 
 	//Use Sinch SDK to create a new user
 	sinchClient.newUser(signUpObj, function(ticket) {
