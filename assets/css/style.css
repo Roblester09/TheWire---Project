@@ -7,6 +7,7 @@
   min-height: 100vh;
   background-size: cover;
   background-position: center;
+  background-image: url("../images/backgroundOne.jpg");
 }
 
 #box-wrapper h1 {
@@ -20,4 +21,10 @@
   color: white;
   text-align: center;
   font-size: 2.5em;
+}
+
+#createlogin {
+  margin-left: 43%;
+  margin-top: 25%;
+  padding: 12px 50px;
 }
