@@ -236,8 +236,3 @@ var handleError = function(error) {
 var clearError = function() {
 	$('div.error').hide();
 }
-
-
-
-
-})
