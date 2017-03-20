@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Custom Stylesheet */
 /**
  * Use this file to override Materialize files so you can update
@@ -28,34 +29,35 @@ p {
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
-}
-  .parallax-container .section {
-    width: 100%;
-  }
-
-@media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
+=======
+.jumbotron {
+  margin: auto 0;
+>>>>>>> f539c89e7b7de005666502e1007a46a8ccd922cd
 }
 
-@media only screen and (max-width : 600px) {
-  #index-banner .section {
-    top: 0;
-  }
+#box-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../images/backgroundOne.jpg");
 }
 
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-  font-size: inherit;
+#box-wrapper h1 {
+  color: white;
+  text-align: center;
+  font-size: 2.5em;
+  padding-top: 120px;
 }
 
-footer.page-footer {
-  margin: 0;
+#box-wrapper p {
+  color: white;
+  text-align: center;
+  font-size: 2.5em;
+}
+
+#createlogin {
+  margin-left: 43%;
+  margin-top: 25%;
+  padding: 12px 50px;
 }
