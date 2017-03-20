@@ -1,17 +1,6 @@
 $(document).ready(function() {
 
-    // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDWjD9kZIz9VNzDOyOT5d9dG0d6cbRDozU",
-    authDomain: "be-selekt.firebaseapp.com",
-    databaseURL: "https://be-selekt.firebaseio.com",
-    storageBucket: "be-selekt.appspot.com",
-    messagingSenderId: "274079531363"
-  };
-  firebase.initializeApp(config);
-
-  var database = firebase.database();
-
+  
 
 var global_username = '';
 
@@ -21,7 +10,6 @@ var showUI = function() {
 	$('div#chat').show();
 	$('form#userForm').css('display', 'none');
 	$('div#userInfo').css('display', 'inline');
-	$('h3#login').css('display', 'none');
 	$('span#username').text(global_username);
 
 	$('form#newRecipient').show();
@@ -30,11 +18,6 @@ var showUI = function() {
 
 
 /*** If no valid session could be started, show the login interface ***/
-
-var showLoginUI = function() {
-	$('form#userForm').css('display', 'inline');
-	$('input#username').focus();
-}
 
 //*** Set up sinchClient ***/
 
@@ -70,38 +53,26 @@ if(sessionObj.userId) { //Remove "false &&"" to actually check start from a prev
 			localStorage[sessionName] = JSON.stringify(sinchClient.getSession());
 
 	event.preventDefault();
-	$('button#loginUser').attr('disabled', true);
-	$('button#createUser').attr('disabled', true);
 	clearError();
 		})
 		.fail(function() {
 			//No valid session, take suitable action, such as prompting for username/password, then start sinchClient again with login object
-			showLoginUI();
 		});
 }
 else {
-	showLoginUI();
 }
 
 
 /*** Create user and start sinch for that user and save session in localStorage ***/
 
-$('button#createUser').on('click', function(event) {
-	event.preventDefault();
-	$('button#loginUser').attr('disabled', true);
-	$('button#createUser').attr('disabled', true);
+$('#createAccount').on('click', function(event) {
+	
 	clearError();
 
 	var signUpObj = {};
-	signUpObj.username = $('input#username').val();
-	signUpObj.password = $('input#password').val();
+	signUpObj.username = $('#userEmail').val();
+	signUpObj.password = $('#userPassword').val();
 
-	
-	database.ref().push({
-
-        username: signUpObj.username,
-        password: signUpObj.password,
-      });
 
 	//Use Sinch SDK to create a new user
 	sinchClient.newUser(signUpObj, function(ticket) {
@@ -120,15 +91,13 @@ $('button#createUser').on('click', function(event) {
 
 /*** Login user and save session in localStorage ***/
 
-$('button#loginUser').on('click', function(event) {
+$('#account-login').on('click', function(event) {
 	event.preventDefault();
-	$('button#loginUser').attr('disabled', true);
-	$('button#createUser').attr('disabled', true);
 	clearError();
 
 	var signInObj = {};
-	signInObj.username = $('input#username').val();
-	signInObj.password = $('input#password').val();
+	signInObj.username = $('#loginEmail').val();
+	signInObj.password = $('#loginPassword').val();
 
 	//Use Sinch SDK to authenticate a user
 	sinchClient.start(signInObj, function() {
@@ -144,7 +113,7 @@ $('button#loginUser').on('click', function(event) {
 
 /*** Send a new message ***/
 
-var messageClient = sinchClient.getMessageClient();
+vvar messageClient = sinchClient.getMessageClient();
 
 $('form#newMessage').on('submit', function(event) {
 	event.preventDefault();
@@ -201,23 +170,6 @@ messageClient.addEventListener(eventListenerDelivery);
 
 /*** Log out user ***/
 
-$('button#logOut').on('click', function(event) {
-	event.preventDefault();
-	clearError();
-
-	//Stop the sinchClient
-	sinchClient.terminate(); //Note: sinchClient object is now considered stale. Instantiate new sinchClient to reauthenticate, or reload the page.
-
-	//Remember to destroy / unset the session info you may have stored
-	delete localStorage[sessionName];
-
-	//Allow re-login
-	$('button#loginUser').attr('disabled', false);
-	$('button#createUser').attr('disabled', false);
-
-	//Reload page.
-	window.location.reload();
-});
 
 
 /*** Handle errors, report them and re-enable UI ***/
@@ -240,4 +192,6 @@ var clearError = function() {
 
 
 
+
 })
+
