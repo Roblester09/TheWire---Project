@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Selekt Profile</title>
+    <title>Selekt Settings</title>
     <!-- CSS  -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css"/>
@@ -47,41 +47,55 @@
         </div><!-- /.container-fluid -->
     </nav>
 
-
-    <div id="profile-content">
+    <div id="settings-content">
         <div class="container">
-
-            <div class="row" id="profilePic">
-                <div class="col-md-11 col-md-offset-1">
-                    <img id="userPicture" src="http://placehold.it/200x200" alt="placeholder">
-                </div>
-            </div>
 
             <div class="row">
                 <div class="col-md-5 col-md-offset-1">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <div class="panel-title">Profile Details</div>
+                            <h3 class="panel-title">Profile Picture</h3>
                         </div>
                         <div class="panel-body">
-                            <ul>
-                                <li>Name: </li>
-                                <li>Agency: </li>
-                                <li>Address: </li>
-                                <li>Job Title: </li>
-                                <li>Phone: </li>
-                                <li>Email: </li>
-                            </ul>
+                            <img id="userPicture" src="http://placehold.it/200x200" alt="placeholder">
+                            <div class="form-group">
+                                <label for="exampleInputFile">File input</label>
+                                <input type="file" id="exampleInputFile">
+                                <p class="help-block">Example block-level help text here.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <div class="panel-title">Company Location</div>
+                            <h3 class="panel-title">Panel title</h3>
                         </div>
                         <div class="panel-body">
-
+                            Panel content
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">About Me</h3>
+                        </div>
+                        <div class="panel-body">
+                            Panel content
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Panel title</h3>
+                        </div>
+                        <div class="panel-body">
+                            Panel content
                         </div>
                     </div>
                 </div>
@@ -90,7 +104,6 @@
 
         </div>
     </div>
-
 
     <!--  Scripts-->
     <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
