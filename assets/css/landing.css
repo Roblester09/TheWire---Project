@@ -8,7 +8,7 @@ body {
 h3 {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
-	color: #62029d;
+	color: #3b5998;
 	margin-top: 0px;
 	margin-bottom: 5px;
 	text-transform: uppercase;
@@ -295,6 +295,10 @@ div.top1 h1 {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 	font-size: 40px;
+}
+
+.chat-container {
+	float: right;
 }
 
 

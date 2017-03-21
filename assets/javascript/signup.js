@@ -16,6 +16,8 @@ $(document).ready(function() {
 
 var global_username = '';
 
+
+
 /*** After successful authentication, show user interface ***/
 
 var showUI = function() {
@@ -72,6 +74,8 @@ else {
    firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
            $('.signed-in').hide();
+           $('.chat-btn').show();
+
            //window.location =
         } else {
             
@@ -180,6 +184,11 @@ $('form#newMessage').on('submit', function(event) {
 	var sinchMessage = messageClient.newMessage(recipients, text);
 	//Send the sinchMessage
 	messageClient.send(sinchMessage).fail(handleError);
+
+	var audio = new Audio('assets/sounds/beep.mp3' ) ;
+	audio.play();
+	
+
 });
 
 
@@ -196,7 +205,8 @@ $('form#newRecipient').on('submit', function(event) {
 var eventListener = {
 	onIncomingMessage: function(message) {
 		$('div#chatArea').prepend('<div class="msgRow" id="'+message.messageId+'"></div><div class="clearfix"></div>');
-
+		var audio = new Audio('assets/sounds/tick.mp3' ) ;
+		audio.play();
 		$('div.msgRow#'+message.messageId)
 			.attr('class', global_username == message.senderId ? 'me' : 'other')
 			.append([
@@ -211,12 +221,13 @@ var eventListener = {
 messageClient.addEventListener(eventListener);
 
 
+
 /*** Handle delivery receipts ***/ 
 
 var eventListenerDelivery = {
 	onMessageDelivered: function(messageDeliveryInfo) {
 		//$('div#'+messageDeliveryInfo.messageId+' div.recipients').append(messageDeliveryInfo.recipientId + ' ');
-		$('div#'+messageDeliveryInfo.messageId+' div.recipients').append('<img src="style/delivered_green.png" title="'+messageDeliveryInfo.recipientId+'">');
+		$('div#'+messageDeliveryInfo.messageId+' div.recipients').append('<img src="../images/check.png" title="'+messageDeliveryInfo.recipientId+'">');
 	}
 }
 
@@ -247,7 +258,7 @@ var clearError = function() {
 
 
 
-})
+}) // document ready
 
 
 
