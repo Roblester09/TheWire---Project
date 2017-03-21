@@ -16,6 +16,8 @@ $(document).ready(function() {
 
 var global_username = '';
 
+
+
 /*** After successful authentication, show user interface ***/
 
 var showUI = function() {
@@ -72,6 +74,8 @@ else {
    firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
            $('.signed-in').hide();
+           $('.chat-btn').show();
+
            //window.location =
         } else {
             
