@@ -152,6 +152,7 @@ $('#myModal').on('shown.bs.modal', function () {
                                 <label for="exampleInputFile">File input</label>
                                 <input type="file" id="exampleInputFile">
                                 <p class="help-block">Example block-level help text here.</p>
+                                <input type="submit" value="Submit" class="submitButton">
                             </div>
                         </div>
                     </div>
@@ -159,10 +160,18 @@ $('#myModal').on('shown.bs.modal', function () {
                 <div class="col-md-5">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Panel title</h3>
+                            <h3 class="panel-title">About Me</h3>
                         </div>
                         <div class="panel-body">
-                            Panel content
+                            <form>
+                                Name:<br>
+                                    <input type="text" name="name" id="name">
+                                Agency:<br>
+                                    <input type="text" name="agnecy" id="agency">
+                                Job Title:<br>
+                                    <input type="text" name="jobTitle">
+                                    <input type="submit" value="Submit" class="submitButton">
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -172,20 +181,40 @@ $('#myModal').on('shown.bs.modal', function () {
                 <div class="col-md-5 col-md-offset-1">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">About Me</h3>
+                            <h3 class="panel-title">Contact Information</h3>
                         </div>
                         <div class="panel-body">
-                            Panel content
+                            <form>
+                                Phone:<br>
+                                    <input type="text" name="phone" id="phone">
+                                Alt Phone:<br>
+                                    <input type="text" name="altPhone" id="altPhone">
+                                Email:<br>
+                                    <input type="text" name="email" id="email">
+                                Alt Email:<br>
+                                    <input type="text" name="altEmail" id="altEmail">
+                                    <input type="submit" value="Submit" class="submitButton">
+                            </form>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Panel title</h3>
+                            <h3 class="panel-title">Media Profiles</h3>
                         </div>
                         <div class="panel-body">
-                            Panel content
+                            <form>
+                                Website:<br>
+                                    <input type="text" name="website" id="website">
+                                Instagram:<br>
+                                    <input type="text" name="instagram" id="instagram">
+                                Facebook:<br>
+                                    <input type="text" name="Facebook" id="facebook">
+                                LinkedIn:<br>
+                                    <input type="text" name="linkedIn" id="linkedIn">
+                                    <input type="submit" value="Submit" class="submitButton">
+                            </form>
                         </div>
                     </div>
                 </div>
