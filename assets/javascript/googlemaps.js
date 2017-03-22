@@ -1,5 +1,3 @@
-$(document).ready(function() {
-
 var geoLocateMapsAPI = "AIzaSyAu2voEOxFGHtqYtNUUIST0Zl-SdLBWLYY"
 
 var baseURL = "https://www.googleapis.com/geolocation/v1/geolocate?key="
@@ -7,9 +5,10 @@ var baseURL = "https://www.googleapis.com/geolocation/v1/geolocate?key="
 function initMap() {
 
   var map = new google.maps.Map(document.getElementById('map'), {
+
     zoom: 10
+
   });
-  var infoWindow = new google.maps.InfoWindow({map: map});
 
   if (navigator.geolocation) {
 
@@ -30,11 +29,13 @@ function initMap() {
     }, function() {
 
       handleLocationError(true, infoWindow, map.getCenter());
+
     });
 
   } else {
 
     handleLocationError(false, infoWindow, map.getCenter());
+
   }
   
 }
