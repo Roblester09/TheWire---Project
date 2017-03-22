@@ -152,6 +152,8 @@ $('#account-login').on('click', function(){
 
 	});
 
+	setTimeout(function(){
+	 window.location.replace('profile.html'); }, 2800);
 });
 
 
