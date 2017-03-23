@@ -2,6 +2,41 @@
 
 // var baseURL = "https://www.googleapis.com/geolocation/v1/geolocate?key="
 
+  var config = {
+    apiKey: "AIzaSyDWjD9kZIz9VNzDOyOT5d9dG0d6cbRDozU",
+    authDomain: "be-selekt.firebaseapp.com",
+    databaseURL: "https://be-selekt.firebaseio.com",
+    storageBucket: "be-selekt.appspot.com",
+    messagingSenderId: "274079531363"
+  };
+
+  firebase.initializeApp(config);
+
+ var dataRef = firebase.database();
+
+function updateUserCords(email, latitude, longitude) {
+
+
+  if (email === UID.email) {
+
+    alert("test")
+
+  } else {
+
+        dataRef.ref().push({
+        email: email,
+        latitude: latitude,
+        longitude: longitude
+
+      });
+
+    }
+
+}
+
+
+
+
 function initMap() {
 
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -26,6 +61,9 @@ function initMap() {
       	map: map
       })
 
+      updateUserCords(localStorage.getItem("email"), pos.lat, pos.lng);
+
+
     }, function() {
 
       handleLocationError(true, infoWindow, map.getCenter());
@@ -39,3 +77,5 @@ function initMap() {
   }
 
 }
+
+

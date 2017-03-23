@@ -140,6 +140,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 $('#account-login').on('click', function(){
 	var email = $("#loginEmail").val().trim();
 	var password = $('#loginPassword').val();
+	localStorage.setItem("email", email);
 
 	firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
 	  // Handle Errors here.
