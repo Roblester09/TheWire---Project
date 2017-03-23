@@ -19,7 +19,7 @@ function updateUserCords(email, latitude, longitude) {
 
 var userId = firebase.auth().currentUser.uid;
 
- firebase.database().ref('users/' + userId).push({
+ firebase.database().ref('users/' + userId).set({
 
     email: email,
     latitude: latitude,

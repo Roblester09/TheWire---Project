@@ -383,6 +383,8 @@ body {
   height: 300px;
 }
 
+
+
 #profilePic {
   margin-bottom: 20px;
 
@@ -533,8 +535,34 @@ body {
   height: 300px;
 }
 
+ul {
+  padding: 0;
+}
+
 li {
   list-style: none;
+}
+
+.panel-body {
+  padding: 0;
+  margin: 0;
+}
+
+
+.list-group-item {
+  padding: 14px 15px;
+}
+
+.list-group-item-info {
+  color: black;
+  background-color: #d9edf7;
+}
+
+.panel-heading {
+  background-color: #F05F40;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  color: white;
 }
 
 

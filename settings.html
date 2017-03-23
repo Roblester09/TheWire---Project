@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css"/>
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/chat.css">
 
@@ -29,82 +31,43 @@ $('#myModal').on('shown.bs.modal', function () {
 }
 </script>
 
-    <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-info btn-lg fpos_bottom_corner" data-toggle="modal" data-target="#myModal">
+     <!-- Trigger the modal with a button -->
+    <button type="button" class="btn messenger btn-lg fpos_bottom_corner" data-toggle="modal" data-target="#myModal">
         <span class="new_chat_label"></span>Messenger</button>
     
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
+        <div class="modal-dialog" role="document">
             <!-- Modal content-->
-            <div class="panel panel-primary">
-                <div class="panel-heading"> <span class="glyphicon glyphicon-comment" id="username"></span> 
-                    <div class="btn-group pull-right">
-                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown"> 
-                            <span class="glyphicon glyphicon-chevron-down"></span>
-                        </button>
-                        <ul class="dropdown-menu slidedown">
-                            <li><a href="#"><span class="glyphicon glyphicon-refresh"></span>Refresh</a>
-                            </li>
-                            <li><a href="#"><span class="glyphicon glyphicon-ok-sign"></span>Available</a>
-                            </li>
-                            <li><a href="#"><span class="glyphicon glyphicon-remove"></span>Busy</a>
-                            </li>
-                            <li><a href="#"><span class="glyphicon glyphicon-time"></span>Away</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li><a href="#" data-dismiss="modal"><span class="glyphicon glyphicon-off"></span>Close</a>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="modal-content">
+                <div class="modal-header"> 
+                    <span><i class="fa fa-comments fa-2x sr-contact"></i></span>
                 </div>
-                <div class="panel-body" id="reverse_scroll">
-                    <ul class="chat">
-                        <li class="left clearfix"><span class="chat-img pull-left">
-                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
-                            </span>
-                           </li>
-                           </ul>
-
-
-  
-                    <br> <br>
-                     
-
-                        <div class="frame mainArea">
-                          <h3>Chat</h3>
-
-                          <div class="error">
-                          </div>
-                            
-                          <div id="chat">
-                            <form id="newRecipient">
-                              <input id="recipients" placeholder="Recipients (separate with space)"><br>
-                            </form>
-                            <form id="newMessage">
-                              <input id="message" placeholder="Message (enter to send)"><br>
-                         <!--      <button id="sendMsg">Send</button> -->
-                            </form>
-
-                            <div id="chatAreaContainer">
-                              <div id="bottomFade"></div>
-                              <div id="chatArea">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="clearfix"></div>
-                          
+                <div class="modal-body frame mainArea">
+                    <br>
+                    <h3>Chat</h3>
+                    <div class="error">
+                    </div>
+                    <div id="chat">
+                        <form id="newRecipient">
+                            <input id="recipients" placeholder="Recipients (separate with space)"><br>
+                        </form>
+                        <form id="newMessage">
+                            <input id="message" placeholder="Message (enter to send)"><br>
+                        </form>
+                        <div id="chatAreaContainer">
+                            <div id="chatArea"></div>
                         </div>
-                        
-                        <div class="clearfix"></div>
-                      </div>
-                      </div> <!-- Container Close --> 
-
                     </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix"></div>
                 </div>
-            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div> <!-- Container Close --> 
         </div>
-    </div> 
+    </div>
 
     <nav id="mainNav" class="navbar navbar-default">
         <div class="container-fluid">
@@ -162,7 +125,7 @@ $('#myModal').on('shown.bs.modal', function () {
 
             <div class="row">
                 <div class="col-md-5 col-md-offset-1">
-                    <div class="panel panel-default">
+                    <div class="panel">
                         <div class="panel-heading">
                             <h3 class="panel-title">Profile Picture</h3>
                         </div>
@@ -172,13 +135,12 @@ $('#myModal').on('shown.bs.modal', function () {
                                 <label for="inputFile">File input</label>
                                 <input type="file" id="inputFile">
                                 <p class="help-block">Example block-level help text here.</p>
-                                <input type="submit" value="Submit" class="submitButton">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <div class="panel panel-default">
+                    <div class="panel">
                         <div class="panel-heading">
                             <h3 class="panel-title">About Me</h3>
                         </div>
@@ -189,6 +151,7 @@ $('#myModal').on('shown.bs.modal', function () {
                                 Agency:<br>
                                     <input type="text" name="agnecy" id="agency">
                                 Job Title:<br>
+                                    <input type="text" name="jobTitle">
                                     <input type="text" name="jobTitle" id="jobTitle">
                                     <input type="submit" value="Submit" class="submitButton">
                             </form>
@@ -199,7 +162,7 @@ $('#myModal').on('shown.bs.modal', function () {
             </div>
             <div class="row">
                 <div class="col-md-5 col-md-offset-1">
-                    <div class="panel panel-default">
+                    <div class="panel">
                         <div class="panel-heading">
                             <h3 class="panel-title">Contact Information</h3>
                         </div>
@@ -213,13 +176,12 @@ $('#myModal').on('shown.bs.modal', function () {
                                     <input type="text" name="email" id="email">
                                 Alt Email:<br>
                                     <input type="text" name="altEmail" id="altEmail">
-                                    <input type="submit" value="Submit" class="submitButton">
                             </form>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <div class="panel panel-default">
+                    <div class="panel">
                         <div class="panel-heading">
                             <h3 class="panel-title">Media Profiles</h3>
                         </div>
@@ -233,7 +195,6 @@ $('#myModal').on('shown.bs.modal', function () {
                                     <input type="text" name="Facebook" id="facebook">
                                 LinkedIn:<br>
                                     <input type="text" name="linkedIn" id="linkedIn">
-                                    <input type="submit" value="Submit" class="submitButton">
                             </form>
                         </div>
                     </div>
