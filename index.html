@@ -15,7 +15,7 @@
 </head>
 <body id="page-top">
 
-  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -47,87 +47,85 @@
         <!-- /.container-fluid -->
     </nav>
 
-  <header>
-    <div class="header-content">
-        <div class="header-content-inner">
-            <h1 id="homeHeading">SELEKT, Simplify, and Strategize</h1>
-            <hr>
-            <p>Connecting Agents Worldwide</p>
-            <button id="createlogin" type="button" class="btn btn-primary btn-xl page-scroll" data-toggle="modal" data-target="#myModal">Sign Up</button>
-
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 class="homeHeading">SELEKT</h1>
+                <h1 class="homeHeading">Simplify</h1>
+                <h1 class="homeHeading">Strategize</h1>
+            </div>
         </div>
-    </div>
     </header>
 
     <!-- Modal -->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="userFirst">
                         </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="firstName">First Name</label>
-                                    <input type="text" class="form-control" id="userFirst">
-                                </div>
-                                <div class="form-group">
-                                    <label for="lastName">Last Name</label>
-                                    <input type="text" class="form-control" id="userLast">
-                                </div>
-                                <div class="form-group">
-                                    <label for="companyName">Company Name</label>
-                                    <input type="text" class="form-control" id="userCompany">
-                                </div>
-                                <div class="form-group">
-                                    <label for="companyEmail">Email</label>
-                                    <input type="email" class="form-control" id="userEmail">
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="userPassword">
-                                </div>
-                            </form>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="userLast">
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" id="createAccount" class="btn btn-primary">Submit</button>
+                        <div class="form-group">
+                            <label for="companyName">Company Name</label>
+                            <input type="text" class="form-control" id="userCompany">
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="companyEmail">Email</label>
+                            <input type="email" class="form-control" id="userEmail">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="userPassword">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" id="createAccount" class="btn btn-primary">Submit</button>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- Modal -->
-            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="companyEmail">Email</label>
+                            <input type="email" class="form-control" id="loginEmail">
                         </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="companyEmail">Email</label>
-                                    <input type="email" class="form-control" id="loginEmail">
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="loginPassword">
-                                </div>
-                            </form>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="loginPassword">
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" id="account-login" class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" id="account-login" class="btn btn-primary">Submit</button>
                 </div>
             </div>
+        </div>
+    </div>
 
-  <section class="bg-primary" id="about">
+    <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -186,8 +184,8 @@
     <aside class="bg-dark">
         <div class="container text-center">
             <div class="call-to-action">
-                <h2>Free Download at Start Bootstrap!</h2>
-                <a href="http://startbootstrap.com/template-overviews/creative/" class="btn btn-default btn-xl sr-button">Download Now!</a>
+                <h2>Connect your agency to the world today!</h2>
+                <a href="http://startbootstrap.com/template-overviews/creative/" class="btn btn-default btn-xl sr-button">Sign Up Today!</a>
             </div>
         </div>
     </aside>
