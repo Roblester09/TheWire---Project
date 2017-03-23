@@ -1,6 +1,7 @@
-// var geoLocateMapsAPI = "AIzaSyAu2voEOxFGHtqYtNUUIST0Zl-SdLBWLYY"
 
-// var baseURL = "https://www.googleapis.com/geolocation/v1/geolocate?key="
+var geoLocateMapsAPI = "AIzaSyAu2voEOxFGHtqYtNUUIST0Zl-SdLBWLYY"
+
+var baseURL = "https://www.googleapis.com/geolocation/v1/geolocate?key="
 
 function initMap() {
 
@@ -34,8 +35,9 @@ function initMap() {
 
   } else {
 
+    handleLocationError(false, infoWindow, map.getCenter());
+    
     alert("This needs you to turn on instant location, so like do that please");
-
   }
 
 }
