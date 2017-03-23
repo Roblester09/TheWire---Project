@@ -215,7 +215,7 @@ messageClient.addEventListener(eventListener);
 var eventListenerDelivery = {
 	onMessageDelivered: function(messageDeliveryInfo) {
 		//$('div#'+messageDeliveryInfo.messageId+' div.recipients').append(messageDeliveryInfo.recipientId + ' ');
-		$('div#'+messageDeliveryInfo.messageId+' div.recipients').append('<img src="../images/check.png" title="'+messageDeliveryInfo.recipientId+'">');
+		$('div#'+messageDeliveryInfo.messageId+' div.recipients').append('<img src="assets/images/check.png" title="'+messageDeliveryInfo.recipientId+'">');
 	}
 }
 

@@ -9,6 +9,7 @@
     <!-- CSS  -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css"/>
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/chat.css">
 
@@ -119,13 +120,13 @@ $('#myModal').on('shown.bs.modal', function () {
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll signed-in" href="profile.html">Profile</a>
+                        <a class="page-scroll" href="profile.html">Profile</a>
                     </li>
                     <li>
                         <a class="settings page-scroll" href="settings.html">Settings</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#contactModal" data-toggle="modal">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -133,6 +134,28 @@ $('#myModal').on('shown.bs.modal', function () {
         </div>
         <!-- /.container-fluid -->
     </nav>
+
+    <!-- Modal -->
+        <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Let's Get In Touch!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Ready to start your next steps with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                        <i class="fa fa-phone fa-3x sr-contact"></i>
+                        <p>123-456-6789</p>
+                        <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                        <p><a href="mailto:your-email@your-domain.com">feedback@bekinekt.com</a></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <div id="settings-content">
         <div class="container">
@@ -146,8 +169,8 @@ $('#myModal').on('shown.bs.modal', function () {
                         <div class="panel-body">
                             <img id="userPicture" src="http://placehold.it/200x200" alt="placeholder">
                             <div class="form-group">
-                                <label for="exampleInputFile">File input</label>
-                                <input type="file" id="exampleInputFile">
+                                <label for="inputFile">File input</label>
+                                <input type="file" id="inputFile">
                                 <p class="help-block">Example block-level help text here.</p>
                                 <input type="submit" value="Submit" class="submitButton">
                             </div>
@@ -166,7 +189,7 @@ $('#myModal').on('shown.bs.modal', function () {
                                 Agency:<br>
                                     <input type="text" name="agnecy" id="agency">
                                 Job Title:<br>
-                                    <input type="text" name="jobTitle">
+                                    <input type="text" name="jobTitle" id="jobTitle">
                                     <input type="submit" value="Submit" class="submitButton">
                             </form>
                         </div>
@@ -226,6 +249,7 @@ $('#myModal').on('shown.bs.modal', function () {
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="assets/javascript/signup.js"> </script>
+    <script src="assets/javascript/settings.js"> </script>
     <script src="sinch.min.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
 </body>
