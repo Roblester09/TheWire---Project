@@ -116,6 +116,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 	        if (user) {
 	        	$('.signed-in').hide();
            		$('.chat-btn').show();
+           		$('#dashboard').show()
 	        	console.log("Login Successful!")
 	        	var signInObj = {};
 				signInObj.username = $('#loginEmail').val();
@@ -215,7 +216,7 @@ messageClient.addEventListener(eventListener);
 var eventListenerDelivery = {
 	onMessageDelivered: function(messageDeliveryInfo) {
 		//$('div#'+messageDeliveryInfo.messageId+' div.recipients').append(messageDeliveryInfo.recipientId + ' ');
-		$('div#'+messageDeliveryInfo.messageId+' div.recipients').append('<img src="../images/check.png" title="'+messageDeliveryInfo.recipientId+'">');
+		$('div#'+messageDeliveryInfo.messageId+' div.recipients').append('<img src="assets/images/check.png" title="'+messageDeliveryInfo.recipientId+'">');
 	}
 }
 
