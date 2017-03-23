@@ -71,16 +71,7 @@ else {
   var database = firebase.database();
 
 
-   firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-           $('.signed-in').hide();
-           $('.chat-btn').show();
-
-           //window.location =
-        } else {
-            
-        }
-    });
+  
 
 $('#createAccount').on('click', function(){
 	var email = $('#userEmail').val().trim();
@@ -121,43 +112,38 @@ $('#createAccount').on('click', function(){
 
 
 
+firebase.auth().onAuthStateChanged(function(user) {
+	        if (user) {
+	        	$('.signed-in').hide();
+           		$('.chat-btn').show();
+	        	console.log("Login Successful!")
+	        	var signInObj = {};
+				signInObj.username = $('#loginEmail').val();
+				signInObj.password = $('#loginPassword').val();
+
+	//Use Sinch SDK to authenticate a user
+			sinchClient.start(signInObj, function() {
+				global_username = signInObj.username;
+				//On success, show the UI
+				showUI();
+
+			//Store session & manage in some way (optional)
+			localStorage[sessionName] = JSON.stringify(sinchClient.getSession());
+			});
+	         
+	        } else {
+	            return false;
+	        }
+ });
 
 
 $('#account-login').on('click', function(){
 	var email = $("#loginEmail").val().trim();
 	var password = $('#loginPassword').val();
 
-	console.log(email);
-	console.log(password);
-
-	var signInObj = {};
-	signInObj.username = $('#loginEmail').val();
-	signInObj.password = $('#loginPassword').val();
-
-
-
-
-	//Use Sinch SDK to authenticate a user
-	sinchClient.start(signInObj, function() {
-		global_username = signInObj.username;
-		//On success, show the UI
-		showUI();
-
-		//Store session & manage in some way (optional)
-		localStorage[sessionName] = JSON.stringify(sinchClient.getSession());
-	});
-
-
 	firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
 	  // Handle Errors here.
 
-	  firebase.auth().onAuthStateChanged(function(user) {
-	        if (user) {
-	          //window.location
-	        } else {
-	            
-	        }
-	    });
 	  var errorCode = error.code;
 	  var errorMessage = error.message;
 
@@ -166,6 +152,8 @@ $('#account-login').on('click', function(){
 
 	});
 
+	setTimeout(function(){
+	 window.location.replace('profile.html'); }, 2800);
 });
 
 
