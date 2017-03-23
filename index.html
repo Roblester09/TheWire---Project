@@ -25,12 +25,17 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">be Selekt</a>
+                <a class="navbar-brand" href="#page-top" >be Selekt</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                 
                 <ul class="nav navbar-nav navbar-right">
+                   <li>
+                <a id="dashboard" style="display: none" href="profile.html">Dashboard</a>
+                    </li>
+
                     <li>
                         <a class="page-scroll signed-in" href="#myModal" data-toggle="modal">Sign Up</a>
                     </li>
@@ -53,9 +58,9 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 class="homeHeading">SELEKT</h1>
-                <h1 class="homeHeading">Simplify</h1>
-                <h1 class="homeHeading">Strategize</h1>
+                <h1 class="homeHeading" style="color: #f4d054">SELEKT.</h1>
+                <h1 class="homeHeading" style="color: #f4d054">Simplify.</h1>
+                <h1 class="homeHeading" style="color: #f4d054">Strategize.</h1>
             </div>
         </div>
     </header>
@@ -134,7 +139,7 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">We've got what you need!</h2>
                     <hr class="light">
-                    <p class="text-faded">Selekt has everything you need to get your new agency communicating to the world in no time! All of the functions and settings are open to you for customization and they are easy to use.</p>
+                    <p class="text-faded">Selekt has everything you need to get your models + agency noticed. With a database comprised of some of the leading industry professionals in the world it's no wonder we're rated as #1. </p>
                     <button id="createlogin" type="button" class="page-scroll btn btn-default btn-xl sr-button" data-toggle="modal" data-target="#myModal">Sign Up</button>
                 </div>
             </div>
@@ -145,7 +150,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">At Your Service</h2>
+                    <h2 class="section-heading">Trusted By</h2>
                     <hr class="primary">
                 </div>
             </div>
@@ -154,30 +159,30 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
-                        <h3>Sturdy Functionality</h3>
-                        <p class="text-muted">Our services are updated regularly so they don't break.</p>
+                        <img src="assets/images/muse.jpg" style="width: 140px">
+                        <h3>Modern Muse</h3>
+                        <p class="text-muted">Orlando, FL</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-                        <h3>Ready to Use</h3>
-                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                     <img src="assets/images/nextmiami.jpg" style="width: 140px">
+                        <h3>NEXT Miami</h3>
+                        <p class="text-muted">Miami, FL</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
-                        <h3>Up to Date</h3>
-                        <p class="text-muted">We update dependencies to keep things fresh.</p>
+                        <img src="assets/images/soulartist.png" style="width: 140px" >
+                        <h3>Soul Artist Management</h3>
+                        <p class="text-muted">New York, NY</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-                        <h3>Made with Love</h3>
-                        <p class="text-muted">You have to make your websites with love these days!</p>
+                   <img src="assets/images/LAmodels.jpg" style="width: 120px">
+                        <h3>LA Models</h3>
+                        <p class="text-muted">Los Angeles, CA</p>
                     </div>
                 </div>
             </div>
@@ -188,7 +193,7 @@
         <div class="container text-center">
             <div class="call-to-action">
                 <h2>Connect your agency to the world today!</h2>
-                <a href="http://startbootstrap.com/template-overviews/creative/" class="btn btn-default btn-xl sr-button">Sign Up Today!</a>
+                <button id="createlogin" type="button" class="btn btn-default btn-xl sr-button" data-toggle="modal" data-target="#myModal">Sign Up Today!</button>
             </div>
         </div>
     </aside>
@@ -207,7 +212,7 @@
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                    <p><a href="mailto:your-email@your-domain.com">feedback@bekinekt.com</a></p>
+                    <p><a href="mailto:your-email@your-domain.com">info@beSELEKT.com</a></p>
                 </div>
             </div>
         </div>
@@ -217,7 +222,9 @@
     <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
     <script src="assets/javascript/main.js"></script>
+
     <script src="assets/javascript/signup.js"> </script>
     <script src="sinch.min.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
