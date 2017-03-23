@@ -8,15 +8,8 @@ var database = firebase.database();
 database.ref('users').once("value", function(snapshot) {
     console.log(snapshot);
 
-    $("#profileName").html(snapshot.val().name);
-    $("#profileAgency").html(snapshot.val().agency);
-    $("#profileTitle").html(snapshot.val().jobTitle);
-    $("#profilePhone").html(snapshot.val().phone);
-    $("#profileEmail").html(snapshot.val().email);
-
 
 })
-
 
 
 $('.submitButton').on('click', function writeUserData() {
@@ -36,7 +29,7 @@ var linkedInURL = $('#linkedIn').val().trim();
 
   var userId = firebase.auth().currentUser.uid;
 
-  firebase.database().ref('users/' + userId).set({
+  firebase.database().ref('users/' + userId).push({
     userId: userId,
     name: name,
     email: email,
@@ -49,8 +42,15 @@ var linkedInURL = $('#linkedIn').val().trim();
     linkedInURL: linkedInURL,
     // profilePicture : imageUrl
   });
-})
 
+
+    $("#profileName").html(snapshot.val().name);
+    $("#profileAgency").html(snapshot.val().agency);
+    $("#profileTitle").html(snapshot.val().jobTitle);
+    $("#profilePhone").html(snapshot.val().phone);
+    $("#profileEmail").html(snapshot.val().email);
+
+})
 
 
 
