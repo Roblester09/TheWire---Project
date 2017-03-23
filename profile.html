@@ -122,7 +122,7 @@ $('#myModal').on('shown.bs.modal', function () {
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll signed-in" href="profile.html">Profile</a>
+                        <a class="page-scroll" href="profile.html">Profile</a>
                     </li>
                     <li>
                         <a class="settings page-scroll" href="settings.html">Settings</a>
@@ -155,12 +155,11 @@ $('#myModal').on('shown.bs.modal', function () {
                         </div>
                         <div class="panel-body">
                             <ul>
-                                <li>Name: </li>
-                                <li>Agency: </li>
-                                <li>Address: </li>
-                                <li>Job Title: </li>
-                                <li>Phone: </li>
-                                <li>Email: </li>
+                                <li id="profileName">Name: </li>
+                                <li id="profileAgency">Agency: </li>
+                                <li id="profileTitle">Job Title: </li>
+                                <li id="profilePhone">Phone: </li>
+                                <li id="profileEmail">Email: </li>
                             </ul>
                         </div>
                     </div>
@@ -208,12 +207,12 @@ $('#myModal').on('shown.bs.modal', function () {
     <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="assets/javascript/signup.js"> </script>
     <script src="sinch.min.js"></script>
+
+    <script src="assets/javascript/signup.js"> </script>
     <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
     <script src="assets/javascript/googlemaps.js"> </script>
-    <script src="sinch.min.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAu2voEOxFGHtqYtNUUIST0Zl-SdLBWLYY&callback=initMap"></script>
+    <script src="assets/javascript/settings.js"> </script>
 </body>
 </html>

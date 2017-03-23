@@ -1,8 +1,21 @@
 $(document).ready(function() {
 
 
+
 var database = firebase.database();
 
+
+database.ref('users').once("value", function(snapshot) {
+    console.log(snapshot);
+
+    $("#profileName").html(snapshot.val().name);
+    $("#profileAgency").html(snapshot.val().agency);
+    $("#profileTitle").html(snapshot.val().jobTitle);
+    $("#profilePhone").html(snapshot.val().phone);
+    $("#profileEmail").html(snapshot.val().email);
+
+
+})
 
 
 
@@ -19,7 +32,10 @@ var facebookURL = $('#facebook').val().trim();
 var instagramURL = $('#instagram').val().trim();
 var linkedInURL = $('#linkedIn').val().trim();
 // var profile_picture = $('#inputFile')
+
+
   var userId = firebase.auth().currentUser.uid;
+
   firebase.database().ref('users/' + userId).set({
     userId: userId,
     name: name,
@@ -34,6 +50,7 @@ var linkedInURL = $('#linkedIn').val().trim();
     // profilePicture : imageUrl
   });
 })
+
 
 
 
