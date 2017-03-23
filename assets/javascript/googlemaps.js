@@ -17,24 +17,17 @@ var baseURL = "https://www.googleapis.com/geolocation/v1/geolocate?key="
 
 function updateUserCords(email, latitude, longitude) {
 
+var userId = firebase.auth().currentUser.uid;
 
-  if (email === UID.email) {
+ firebase.database().ref('users/' + userId).set({
 
-    alert("test")
-
-  } else {
-
-        dataRef.ref().push({
-        email: email,
-        latitude: latitude,
-        longitude: longitude
-
-      });
-
-    }
+    // email: email,
+    latitude: latitude,
+    longitude: longitude
+    
+ });
 
 }
-
 
 
 
@@ -62,7 +55,7 @@ function initMap() {
       	map: map
       })
 
-      updateUserCords(localStorage.getItem("email"), pos.lat, pos.lng);
+      // updateUserCords(localStorage.getItem("email"), pos.lat, pos.lng);
 
 
     }, function() {
