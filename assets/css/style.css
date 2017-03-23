@@ -212,8 +212,7 @@ header .header-content .header-content-inner p {
 }
 .section-heading {
   margin-top: 0;
-<<<<<<< HEAD
-}
+
 
 .service-box {
   max-width: 400px;
@@ -224,7 +223,7 @@ header .header-content .header-content-inner p {
   .service-box {
     margin: 20px auto 0;
   }
-=======
+
 }
 
 .service-box {
@@ -386,8 +385,7 @@ body {
 
 #profilePic {
   margin-bottom: 20px;
->>>>>>> bfccc9725e0c3ab2012c50fc321a9f7fa96e8a73
-}
+
 
 .service-box p {
   margin-bottom: 0;
