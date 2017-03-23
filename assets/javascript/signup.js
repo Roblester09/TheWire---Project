@@ -116,6 +116,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 	        if (user) {
 	        	$('.signed-in').hide();
            		$('.chat-btn').show();
+           		$('#dashboard').show();
 	        	console.log("Login Successful!")
 	        	var signInObj = {};
 				signInObj.username = $('#loginEmail').val();
