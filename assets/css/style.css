@@ -367,6 +367,39 @@ body {
   webkit-tap-highlight-color: #222222;
 }
 
+.trust_1_box {
+  margin-top: 30px;
+}
+
+.muse-img {
+  width: 220px;
+}
+
+.trust_2_box {
+  margin-top: 30px;
+}
+
+.miami-img {
+  width: 220px;
+}
+
+.trust_3_box {
+  margin-top: 30px;
+}
+
+.soul-img {
+  width: 260px;
+}
+
+.trust_4_box {
+  margin-top: 40px;
+}
+
+.la-img {
+  width: 290px;
+  margin-bottom: 15px;
+}
+
 #userLocation {
   height: 300px;
 }
