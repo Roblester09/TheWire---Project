@@ -372,7 +372,6 @@ body {
 }
 
 
-
 #profilePic {
   margin-bottom: 20px;
 }
@@ -393,8 +392,18 @@ li {
 .panel-body {
   padding: 0;
   margin: 0;
+  overflow-y: hidden !important;
 }
 
+#panel-img {
+  padding-top: 10px;
+}
+
+.panel-info {
+  padding: 0 10px;
+  background-color: #222222;
+  color: white;
+}
 
 .list-group-item {
   padding: 14px 15px;
