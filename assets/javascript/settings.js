@@ -43,12 +43,13 @@ var linkedInURL = $('#linkedIn').val().trim();
     // profilePicture : imageUrl
   });
 
-
     $("#profileName").html(snapshot.val().name);
     $("#profileAgency").html(snapshot.val().agency);
     $("#profileTitle").html(snapshot.val().jobTitle);
     $("#profilePhone").html(snapshot.val().phone);
     $("#profileEmail").html(snapshot.val().email);
+    
+    console.log(snapshot.val().name)
 
 })
 
