@@ -5,14 +5,15 @@ $(document).ready(function() {
 var database = firebase.database();
 
 
-database.ref('users').once("value", function(snapshot) {
-    console.log(snapshot);
+var userId = firebase.auth().currentUser;
+database.ref('users/' + userId).on("value", function(snapshot) {
 
     $("#profileName").html(snapshot.val().name);
     $("#profileAgency").html(snapshot.val().agency);
     $("#profileTitle").html(snapshot.val().jobTitle);
     $("#profilePhone").html(snapshot.val().phone);
     $("#profileEmail").html(snapshot.val().email);
+
 
 
 })
