@@ -181,7 +181,7 @@ $('#account-login').on('click', function(){
 	});
 
 	setTimeout(function(){
-	 window.location.replace('profile.html'); }, 3200);
+	 window.location.replace('profile.html'); }, 4000);
 });
 
 
