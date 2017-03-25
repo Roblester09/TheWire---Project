@@ -125,7 +125,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 	        if (user) {
 	        	$('.signed-in').hide();
            		$('.chat-btn').show();
-           		$('#dashboard').show()
+           		$('#dashboard').show();
+           		$('#logOut').show();
 	        	console.log("Login Successful!")
 	        	var signInObj = {};
 				signInObj.username = $('#loginEmail').val();
@@ -147,6 +148,22 @@ var userId = user.uid;
 	        }
  });
 
+$('#logOut').on('click', function(){
+	event.preventDefault();
+	firebase.auth().signOut().then(function() {
+  console.log('Signed Out');
+}, function(error) {
+  console.error('Sign Out Error', error);
+});
+	sinchClient.terminate(); //Note: sinchClient object is now considered stale. Instantiate new sinchClient to reauthenticate, or reload the page.
+
+	//Remember to destroy / unset the session info you may have stored
+	delete localStorage[sessionName];
+
+	 setTimeout(function(){
+	 window.location.replace('index.html'); }, 1500);
+
+})
 
 $('#account-login').on('click', function(){
 	var email = $("#loginEmail").val().trim();
