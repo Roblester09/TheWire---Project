@@ -107,7 +107,9 @@ var linkedInURL = $('#linkedIn').val().trim();
   });
 })
 
-
+$( function() {
+    $( "#draggable" ).draggable();
+  } );
 
 
 

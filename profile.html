@@ -21,7 +21,9 @@
         //When user clicks link
         $('#myModal').on('shown.bs.modal', function () {
             var elem = document.getElementById('reverse_scroll');
-
+            $("#myModal").draggable({
+         handle: ".modal-header"
+  });
         });
     }
 </script>
@@ -30,7 +32,7 @@
         <span class="new_chat_label"></span>Messenger</button>
     
     <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal fade ui-widget-content" id="myModal" role="dialog">
         <div class="modal-dialog" role="document">
             <!-- Modal content-->
             <div class="modal-content">
@@ -165,6 +167,10 @@
     <!--  Scripts-->
     <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="assets/javascript/signup.js"> </script>
     <script src="assets/javascript/googlemaps.js"> </script>

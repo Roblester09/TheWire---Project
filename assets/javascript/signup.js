@@ -28,6 +28,7 @@ var showUI = function() {
 
 	$('form#newRecipient').show();
 	$('input#recipients').focus();
+
 }
 
 sinchClient = new SinchClient({
@@ -131,6 +132,10 @@ firebase.auth().onAuthStateChanged(function(user) {
 	        	var signInObj = {};
 				signInObj.username = $('#loginEmail').val();
 				signInObj.password = $('#loginPassword').val();
+
+				$( function() {
+    $( "#myModal" ).draggable();
+  } );
 				
 var userId = user.uid;
 	//Use Sinch SDK to authenticate a user
