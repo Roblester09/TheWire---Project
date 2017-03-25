@@ -3,19 +3,37 @@ $(document).ready(function() {
 var database = firebase.database();
 
 
-var userId = firebase.auth().currentUser.uid;
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+            
+    var userId = user.uid;
+        firebase.database().ref('/users/' + userId).once('value').then(function (snapshot) {
+            var name = snapshot.val().name;
+            var email = snapshot.val().email;
+            var agency = snapshot.val().agency;
+            var address = snapshot.val().address;
+            var jobTitle = snapshot.val().jobTitle;
+            var phone = snapshot.val().phone;
+            var facebook = snapshot.val().facebookURL;
+            var instagram = snapshot.val().instagramURL;
+            var linkedIn = snapshot.val().linkedInURL;
 
-database.ref('users/' + user.id ).on("value", function(snapshot)  {
+            $('#profileName').append(name);
+            $('#profileAgency').append(agency);
+            $('#profileAddress').append(address);
+            $('#profileJobTitle').append(jobTitle);
+            $('#profilePhone').append(phone);
+            $('#profileEmail').append(email);
+            
+               
+        }); 
+             
+    } else {
+        return false;
+    }
+ });
 
-    $("#profileName").html(snapshot.val().name);
-    $("#profileAgency").html(snapshot.val().agency);
-    $("#profileTitle").html(snapshot.val().jobTitle);
-    $("#profilePhone").html(snapshot.val().phone);
-    $("#profileEmail").html(snapsot.val().email);
 
-
-
-})
 
 
 
@@ -25,11 +43,13 @@ $('#settingsSubmit').on('click', function writeUserData() {
 var name = $('#name').val().trim(); 
 var email = $('#email').val().trim();
 var agency = $('#agency').val().trim();
+var address = $('#address').val().trim();
 var jobTitle = $('#jobTitle').val().trim();
 var phone = $('#phone').val().trim();
 var facebookURL = $('#facebook').val().trim();
 var instagramURL = $('#instagram').val().trim();
 var linkedInURL = $('#linkedIn').val().trim();
+
 // var profile_picture = $('#inputFile')
 
 
@@ -40,6 +60,7 @@ var linkedInURL = $('#linkedIn').val().trim();
     name: name,
     email: email,
     agency: agency,
+    address: address,
     jobTitle: jobTitle,
     phone: phone,
     facebookURL: facebookURL,
@@ -48,6 +69,8 @@ var linkedInURL = $('#linkedIn').val().trim();
     // profilePicture : imageUrl
   });
 })
+
+
 
 
 
