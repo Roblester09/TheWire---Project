@@ -266,6 +266,3 @@ var clearError = function() {
 }) // document ready
 
 
-
-
-
