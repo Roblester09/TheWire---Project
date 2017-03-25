@@ -20,7 +20,7 @@
         //When user clicks link
         $('#myModal').on('shown.bs.modal', function () {
             var elem = document.getElementById('reverse_scroll');
-            elem.scrollTop = elem.scrollHeight;
+        
         });
     }
 </script>
@@ -104,10 +104,8 @@
                             <img id="panel-img" src="http://placehold.it/150x150" alt="placeholder">
                             <div class="form-group">
                                 <label class="form-control-static" for="exampleInputFile">File input</label>
+
                                 <input type="file" name="file" id="file">
-                                    <div id="filename"></div>
-                                    <div id="progress"></div>
-                                    <div id="progressBar"></div>
                             </div>
                         </div>
                     </div>
@@ -202,7 +200,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="assets/javascript/signup.js"> </script>
     <script src="assets/javascript/settings.js"> </script>
-    <script src="assets/javascript/simpleUpload.js"> </script>
     <script src="sinch.min.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
 </body>
