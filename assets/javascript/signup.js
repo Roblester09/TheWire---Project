@@ -131,13 +131,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 				signInObj.username = $('#loginEmail').val();
 				signInObj.password = $('#loginPassword').val();
 				
- var userId = user.uid;
-            firebase.database().ref('/users/' + userId).once('value').then(function (snapshot) {
-                var username = snapshot.val().name;
-                var usersAgency = snapshot.val().agency;
-                console.log("Name:", username);
-                console.log("Agency:", usersAgency);
-            }); 
+var userId = user.uid;
 	//Use Sinch SDK to authenticate a user
 			sinchClient.start(signInObj, function() {
 				global_username = signInObj.username;
