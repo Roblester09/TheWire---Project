@@ -76,7 +76,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll signed-in" href="profile.html">Profile</a>
+                        <a class="page-scroll" href="profile.html">Profile</a>
                     </li>
                     <li>
                         <a class="settings page-scroll" href="settings.html">Settings</a>
@@ -121,7 +121,7 @@
                                 <label class="form-control-static" for="inputAgency">Agency</label>
                                 <input class="form-control form-control-sm" type="text" name="agency" id="agency">
                                 <label class="form-control-static" for="inputJobTitle">Job Title</label>
-                                <input class="form-control form-control-sm" type="text" name="jobTitle">
+                                <input class="form-control form-control-sm" type="text" name="jobTitle" id="jobTitle">
                             </form>
                         </div>
                     </div>
@@ -163,6 +163,7 @@
                                 <input class="form-control form-control-sm" type="text" name="linkedIn" id="linkedIn">
                             </form>
                         </div>
+                        <button type="button" id="settingsSubmit" class="btn messenger btn-lg">Submit</button>
                     </div>
                 </div>
                 <div class="col-md-1"></div>
@@ -177,11 +178,11 @@
                             <h4 class="modal-title" id="myModalLabel">Let's Get In Touch!</h4>
                         </div>
                         <div class="modal-body">
-                            <p>Ready to start your next steps with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                            <p>Need help? Cant'find something? Contact us using one of the methods below for 24/7 technical support!</p>
                             <i class="fa fa-phone fa-3x sr-contact"></i>
                             <p>123-456-6789</p>
                             <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                            <p><a href="mailto:your-email@your-domain.com">feedback@bekinekt.com</a></p>
+                            <p><a href="mailto:your-email@your-domain.com">info@beSELEKT.com</a></p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -198,6 +199,7 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="assets/javascript/signup.js"> </script>
+    <script src="assets/javascript/settings.js"> </script>
     <script src="sinch.min.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
 </body>

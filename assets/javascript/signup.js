@@ -80,6 +80,10 @@ $('#createAccount').on('click', function(){
 	console.log(email);
 	console.log(password);
 
+	 // Need to implement if statement (if successful then redirect on click)
+	 setTimeout(function(){
+	 window.location.replace('profile.html'); }, 3200);
+
 	firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
 	  // Handle Errors here.
 	  var errorCode = error.code;
@@ -87,6 +91,9 @@ $('#createAccount').on('click', function(){
 
 	  console.log(errorMessage);
 	  console.log(errorCode);
+
+	
+
 	  // ...
 	});
 
@@ -108,6 +115,8 @@ $('#createAccount').on('click', function(){
 			localStorage[sessionName] = JSON.stringify(sinchClient.getSession());
 		});
 	});
+
+
 });
 
 
@@ -154,7 +163,7 @@ $('#account-login').on('click', function(){
 	});
 
 	setTimeout(function(){
-	 window.location.replace('profile.html'); }, 2800);
+	 window.location.replace('profile.html'); }, 3200);
 });
 
 
