@@ -82,7 +82,7 @@ $('#createAccount').on('click', function(){
 
 	 // Need to implement if statement (if successful then redirect on click)
 	 setTimeout(function(){
-	 window.location.replace('profile.html'); }, 3200);
+	 window.location.replace('profile.html'); }, 5200);
 
 	firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
 	  // Handle Errors here.
@@ -181,7 +181,7 @@ $('#account-login').on('click', function(){
 	});
 
 	setTimeout(function(){
-	 window.location.replace('profile.html'); }, 4000);
+	 window.location.replace('profile.html'); }, 5000);
 });
 
 
